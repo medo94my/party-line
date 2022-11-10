@@ -2,7 +2,6 @@ import styled from "styled-components";
 import InCall from "./components/InCall";
 import PreJoinRoom from "./components/PreJoinRoom";
 import theme from "./theme";
-import logo from "./icons/logo.svg";
 import { SmallText } from "./components/shared/SmallText";
 import { CallProvider, INCALL, PREJOIN, useCallState } from "./CallProvider";
 
@@ -17,21 +16,21 @@ const AppContent = () => {
       <Wrapper>
         <Header>
           <HeaderTop>
-            <Title>Party line</Title>
-            <Logo src={logo} className="App-logo" alt="logo" />
+            <Title>Ahmed Podcast</Title>
+            <Logo src={'https://www.ahmedtawfik.ml//assets/logo.5d59d1b0.svg'} className="App-logo" alt="logo" />
           </HeaderTop>
-          <SmallText>An audio API demo from Daily</SmallText>
+          {/* <SmallText>An audio API demo from Daily</SmallText> */}
         </Header>
-        {view === PREJOIN && <PreJoinRoom />}
-        {view === INCALL && <InCall />}
-        <Link
+         {view===PREJOIN &&<PreJoinRoom />}
+       {view ===INCALL && <InCall />}
+        {/* <Link
           center={view === INCALL}
           href="https://docs.daily.co/guides/demos#party-line-a-multiplatform-audio-only-app"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn more about this demo
-        </Link>
+        </Link> */}
       </Wrapper>
     </AppContainer>
   );
@@ -46,7 +45,7 @@ function App() {
 }
 
 const AppContainer = styled.div`
-  background-color: ${theme.colors.greyLightest};
+  background-color: ${theme.colors.blueDark};
   width: 100%;
   height: 100%;
   overflow-y: scroll;
@@ -57,11 +56,17 @@ const Wrapper = styled.div`
   padding: 32px 24px 0;
   min-height: 100%;
   margin: 0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 `;
 const Logo = styled.img`
-  height: 24px;
+  height: 36px;
+  display:inline-block;
 `;
+
 const Header = styled.header`
+  width:80vw;
   display: flex;
   flex-direction: column;
 `;
@@ -72,7 +77,7 @@ const HeaderTop = styled.header`
 `;
 const Title = styled.h1`
   font-size: ${theme.fontSize.xxlarge};
-  color: ${theme.colors.blueDark};
+  color: ${theme.colors.grey};
   margin: 4px 0;
   font-weight: 600;
 `;

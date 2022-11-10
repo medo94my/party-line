@@ -18,17 +18,17 @@ const Counter = () => {
       clearInterval(interval.current);
     }
 
-    interval.current = setInterval(() => {
-      let secs = Math.round((roomExp - Date.now()) / 1000);
-      const value = Math.floor(secs / 60) + ":" + ("0" + (secs % 60)).slice(-2);
-      if (secs <= 0) {
-        clearInterval(interval.current);
-        console.log("Eep! Room has expired");
-        leaveCall();
-        return;
-      }
-      setCounter(value);
-    }, 1000);
+    // interval.current = setInterval(() => {
+    //   let secs = Math.round((roomExp - Date.now()) / 1000);
+    //   const value = Math.floor(secs / 60) + ":" + ("0" + (secs % 60)).slice(-2);
+    //   if (secs <= 0) {
+    //     clearInterval(interval.current);
+    //     console.log("Eep! Room has expired");
+    //     leaveCall();
+    //     return;
+    //   }
+    //   setCounter(value);
+    // }, 1000);
 
     return () => {
       clearInterval(interval.current);

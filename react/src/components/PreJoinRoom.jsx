@@ -67,10 +67,11 @@ const PreJoinRoom = () => {
           type="text"
           id="fname"
           name="fname"
+          placeholder="John"
           required
         />
         <Label htmlFor="lname">Last name</Label>
-        <Input ref={lastNameRef} type="text" id="lname" name="lname" />
+        <Input ref={lastNameRef} type="text" id="lname" name="lname" placeholder="Doe" />
         <Label htmlFor="room">Join code</Label>
         <Input
           ref={roomNameRef}
@@ -78,6 +79,7 @@ const PreJoinRoom = () => {
           id="room"
           name="room"
           onChange={handleRoomChange}
+          placeholder="8SoIPidrLlRx6wXH"
         />
         <SmallText>
           Enter code to join an existing room, or leave empty to create a new
@@ -128,7 +130,7 @@ const SmallText = styled.p`
   margin: 2px 0;
 `;
 const Label = styled.label`
-  color: ${theme.colors.blueDark};
+  color: ${theme.colors.greyLight};
   font-size: ${theme.fontSize.base};
   margin-bottom: 4px;
   line-height: 16px;
@@ -137,14 +139,19 @@ const Label = styled.label`
 `;
 const Input = styled.input`
   border-radius: 8px;
-  border: ${theme.colors.grey} 1px solid;
-  padding: 4px;
+  border: ${theme.colors.gray} 1px solid;
+  background-color:${theme.colors.greyLight};
+  padding: 4px 10px;
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 4px;
+  color:${theme.colors.blueDark};
 
   &:focus {
-    outline: ${theme.colors.grey} auto 1px;
+    outline: ${theme.colors.turquoise} auto 1px;
+  }
+  &::placeholder{
+    color:${theme.colors.teal}
   }
 `;
 const Submit = styled(Input)`
